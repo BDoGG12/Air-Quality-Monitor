@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17504.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Air Quality View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AirQualityViewController" customModule="Air_Quality_Monitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="9o4-f3-cZ5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7qv-Jf-Wbc">
+                                <rect key="frame" x="274" y="163.5" width="122.5" height="90"/>
+                                <color key="tintColor" name="weatherColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="Yzf-pG-SMj"/>
+                                    <constraint firstAttribute="width" constant="120" id="t4n-uJ-4vd"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="RBL-fT-wqa">
+                                <rect key="frame" x="68" y="348" width="278.5" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicago, Illinois, USA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKC-sc-qVZ" userLabel="Location Label">
+                                        <rect key="frame" x="26.5" y="0.0" width="225.5" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Quality Index" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vx-al-NgC" userLabel="Air Quality Label">
+                                        <rect key="frame" x="0.0" y="67" width="278.5" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUH-8E-7fC" userLabel="Air Quality Label">
+                                        <rect key="frame" x="107" y="134" width="64" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cT-Tj-cam">
+                                <rect key="frame" x="20" y="44.5" width="40" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="02W-y5-xRg"/>
+                                    <constraint firstAttribute="width" constant="40" id="eCm-Sr-YBN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="location.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="locationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2g-Hn-T2e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="2cT-Tj-cam" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Hh-1d-g8E"/>
+                            <constraint firstItem="9o4-f3-cZ5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2Ng-l9-DX0"/>
+                            <constraint firstItem="7qv-Jf-Wbc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="121" id="9eT-aB-rlB"/>
+                            <constraint firstItem="RBL-fT-wqa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AWZ-MM-PgW"/>
+                            <constraint firstAttribute="trailing" secondItem="9o4-f3-cZ5" secondAttribute="trailing" id="FeV-CB-gOQ"/>
+                            <constraint firstItem="2cT-Tj-cam" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="O8n-m1-t0D"/>
+                            <constraint firstItem="7qv-Jf-Wbc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dO2-eB-Uue"/>
+                            <constraint firstItem="9o4-f3-cZ5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s5p-fk-Rut"/>
+                            <constraint firstItem="RBL-fT-wqa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t7I-m6-efh"/>
+                            <constraint firstAttribute="bottom" secondItem="9o4-f3-cZ5" secondAttribute="bottom" id="yo8-xo-t2R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="airQualityLabel" destination="gUH-8E-7fC" id="bux-RJ-5YP"/>
+                        <outlet property="conditionImageView" destination="7qv-Jf-Wbc" id="yoj-rd-UTc"/>
+                        <outlet property="locationLabel" destination="eKC-sc-qVZ" id="Ok1-xe-M0h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="1024" height="1024"/>
+        <image name="cloud.sun" catalog="system" width="128" height="93"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="weatherColor">
+            <color red="0.25699999928474426" green="0.38400000333786011" blue="0.61799997091293335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
